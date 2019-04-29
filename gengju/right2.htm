@@ -1,0 +1,84 @@
+<div class="right fr"> 
+      <script src='/plus/ad_js.php?aid=5' language='javascript'></script>
+      <!--.今日头条-->
+      <div class="hot-recom mb-10">
+	   <h3 class="cm-right-title">今日头条</h3>
+	  {dede:arclist titlelen='66' row='1' flag='c,p' limit='0,1'}
+        <a href="[field:arcurl/]" class="hot-recom-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title/]" class="all-img-block">
+        <div class="hot-recom-first clearfix"> <span class="hot-rf-num fl">1</span>
+          <div class="hot-rf-txt fl">[field:title/]</div>
+        </div>
+        </a>
+ {/dede:arclist}
+        <ul class="hot-recom-main">{dede:arclist titlelen='66' row='5' noflag='c'}
+          <li class="hot-recom-list clearfix"> <a href="[field:arcurl/]" class="hot-recom-ls clearfix"> <span class="hot-recom-ls-num vam fl">[field:global name=autoindex runphp="yes"]@me=@me+1;[/field:global]</span> <span class="hot-recom-ls-word vam fl">[field:title/]</span> </a> </li>
+          {/dede:arclist}
+		</ul>
+      </div>
+      <!--/.今日头条--> 
+      
+      <!--.PC-004--> 
+      <script src='/plus/ad_js.php?aid=2' language='javascript'></script> 
+      
+      <!--.每日精选-->
+      <div class="fcpw">
+        <h3 class="cm-right-title">每日精选</h3>
+        <ul class="fcpw-main">{dede:arclist flag='a,p' titlelen='55' titlelen=66 row=4}
+          <li class="fcpw-ls clearfix"> <a href="[field:arcurl/]" class="fcpw-ls-imgwrap fl"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title/]" class="all-img-block"> </a>
+            <div class="fcpw-right fl"> <a href="[field:arcurl/]" class="a-hover">[field:title/]</a>
+              <div class="fcpw-right-time">[field:pubdate function="MyDate('Y-m-d',@me)"/]</div>
+            </div>
+          </li>
+          {/dede:arclist}
+        </ul>
+      </div>
+      <!--/.每日精选--> 
+      
+      <!--.PC-005--> 
+      <script src='/plus/ad_js.php?aid=3' language='javascript'></script> 
+      
+      <!--.猜你喜欢-->
+      <div class="gul">
+        <h3 class="cm-right-title">猜你喜欢</h3>{dede:arclist row=1 titlelen='55' orderby=click flag='c,p' limit='1,1'}
+        <a href="[field:arcurl/]" class="gul-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title/]" class="all-img-block"> </a>
+ {/dede:arclist}
+        <ul>{dede:arclist row=5 orderby=click noflag='c'}
+<li> <a href="[field:arcurl/]" class="gul-ls">[field:title/]</a> </li>
+{/dede:arclist}
+        </ul>
+      </div>
+      <!--/.猜你喜欢--> 
+      
+      <!--.精彩图片-->
+      <div class="hot-pic mb-10">
+        <h3 class="cm-right-title">精彩图片</h3>
+        <div>
+          <div class="hot-pic-slide-ls">
+            <div class="hot-pic-ul clearfix">{dede:arclist flag='p' titlelen=66 row=4} 
+    <a href="[field:arcurl/]" class="hot-pic-ls fl">
+      <div class="hot-pic-ls-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title/]" class="all-img-block"> </div>
+      <h4 class="hot-pic-ls-title">[field:title/]</h4>
+     </a> 
+    {/dede:arclist}
+			</div>
+          </div>
+        </div>
+      </div>
+      <!--/.精彩图片--> 
+      
+      <!--.热门标签-->
+      <div class="hot-search">
+        <h3 class="cm-right-title">热门标签</h3>
+        <div class="hot-search-main clearfix"> 
+					{dede:tag row='15' getall='1' sort='month'}				
+  <a href="[field:link/]" target="_blank" class="hot-search-word fl">[field:tag /]</a>									
+	{/dede:tag}									
+        </div>
+      </div>
+      <!--/.热门标签--> 
+      
+      <!--.PC-006--> 
+	 <div class="ad-sty"><script src='/plus/ad_js.php?aid=4' language='javascript'></script></div>
+    </div>
+  </div>
+</div>

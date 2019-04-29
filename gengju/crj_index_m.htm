@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="applicable-device" content="mobile" />
+<title>{dede:global.cfg_titlenamess/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/m/style/css/style.css">
+<link rel="stylesheet" href="http://gengju.com.cn/templets/gengju/css/mdui.css" />
+<link rel="stylesheet" href="http://gengju.com.cn/templets/gengju/css/app.css" />
+<script src="/m/style/js/zepto.min.js"></script>
+<script src="/m/style/js/TouchSlide.1.1.js"></script>
+<script src="/m/style/js/layout.js"></script>
+<!--<script type="text/javascript" src="/m/style/js/xskobokhk.js"></script>-->
+<script src="http://gengju.com.cn/templets/gengju/js/mdui.js"></script>
+<style>
+.ml-2 {
+	margin-left: -0.3rem;
+}
+.mt-20 {
+	margin-top: 0.2rem;
+}
+.ml-20 {
+	margin-left: 0.2rem;
+}
+.ml-14 {
+	margin-left: -14px;
+}
+.col-details-tip .details-tips-prev {
+margin-top: .1rem;
+line-height: .5rem;
+}
+.paging--detail {
+margin: .3rem 0
+}
+</style>
+<style>
+.focus .bd ul li {
+	height: 4.8rem;
+}
+.mt-20 {
+	margin-top: 0.2rem;
+}
+.focus .bd ul li {
+    height: 3.8rem!important;
+}
+</style>
+</head>
+
+<body>
+<section class="view"> 
+<!--头部-->
+<header class="header clr">
+
+<div class="header-home"> <a href="/m" class="logo"> <img src="/m/style/images/logo.png" alt="" class="all-img1"> </a> </div>
+<!--<nav class="header-nav"> </nav>-->
+<div class="head1-right">
+		<button class="mdui-btn app-btn" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe5d3;</i></button>
+		<div class="mdui-drawer mdui-drawer-right mdui-drawer-close" id="left-drawer">
+
+			<ul class="mdui-list app-slide-menu app-collapse-menu" mdui-collapse="{accordion: true}">
+			   <li class="mdui-list-item mdui-ripple app-list-home ">
+				   <a href="/" class="app-list-item-link mdui-text-left ">
+					   <div class="mdui-list-item-content">
+							<i class="mdui-list-item-icon mdui-icon material-icons">
+						   &#xe88a;
+						   </i>首页
+					   </div>
+				   </a>
+			   </li>
+			   
+				<li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+				
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+						
+							电视剧剧情
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+							
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/dsjianjie/ndjianjie/index.html" class="app-list-item-link mdui-text-left">
+								内地剧情介绍
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/dsjianjie/gangtaijuqingjieshao/index.html" class="app-list-item-link mdui-text-left">
+								港台剧情介绍
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/dsjianjie/rihanjuqingjieshao/index.html" class="app-list-item-link mdui-text-left">
+								日韩剧情介绍
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/dsjianjie/taijujuqingjieshao/index.html" class="app-list-item-link mdui-text-left">
+								泰剧剧情介绍
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/dsjianjie/oumeijuqingjieshao/index.html" class="app-list-item-link mdui-text-left">
+								欧美剧情介绍
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+							电影剧情
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/dyjuqing/neididyjuqing/index.html" class="app-list-item-link mdui-text-left">
+								内地电影剧情
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/dyjuqing/worldjuqing/index.html" class="app-list-item-link mdui-text-left">
+								欧美电影剧情
+							</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+							分集剧情 
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+					<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/juqing/neidijuqing/index.html" class="app-list-item-link mdui-text-left">
+								内地分集剧情
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/juqing/gtjuqing/index.html" class="app-list-item-link mdui-text-left">
+								港台分集剧情
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/juqing/rhjuqing/index.html" class="app-list-item-link mdui-text-left">
+								日韩分集剧情
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/juqing/tjjuqing/index.html" class="app-list-item-link mdui-text-left">
+								泰剧分集剧情
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/juqing/omjuqing/index.html" class="app-list-item-link mdui-text-left">
+								欧美分集剧情
+							</a>
+						</li>
+					</ul>
+				</li><li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+							微电影
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/weidianying/aiqingweidianying/index.html" class="app-list-item-link mdui-text-left">
+								爱情微电影
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/weidianying/lizhiweidianying/index.html" class="app-list-item-link mdui-text-left">
+								励志微电影
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/weidianying/chuangyiweidianying/index.html" class="app-list-item-link mdui-text-left">
+								创意微电影
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/weidianying/jiluweidianying/index.html" class="app-list-item-link mdui-text-left">
+								记录微电影
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/weidianying/gaoxiaoweidianying/index.html" class="app-list-item-link mdui-text-left">
+								搞笑微电影
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/weidianying/gongyiweidianying/index.html" class="app-list-item-link mdui-text-left">
+								公益微电影
+							</a>
+						</li>
+					</ul>
+				</li><li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+							综艺
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/zongyi/nadizongyi/index.html" class="app-list-item-link mdui-text-left">
+								内地综艺
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/zongyi/hanguozongyi/index.html" class="app-list-item-link mdui-text-left">
+								韩国综艺
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/zongyi/taiwanzongyi/index.html" class="app-list-item-link mdui-text-left">
+								台湾综艺
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/zongyi/oumeizongyi/index.html" class="app-list-item-link mdui-text-left">
+								欧美综艺
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mdui-collapse-item app-hide-list  app-collapse-list">
+				   <a href="http://gengju.com.cn/yanyuanbiao/index.html" class=" mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left">
+							演员表
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</a>
+				</li>
+				<li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+							影视百科
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yingshibaike/jingdiantaici/index.html" class="app-list-item-link mdui-text-left">
+								经典台词
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yingshibaike/xiaopinjuben/index.html" class="app-list-item-link mdui-text-left">
+								小品剧本
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yingshibaike/zhutiqu/index.html" class="app-list-item-link mdui-text-left">
+								主题曲
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yingshibaike/gaoxiaochuanbang/index.html" class="app-list-item-link mdui-text-left">
+								搞笑穿帮
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yingshibaike/yanyuanbiao/index.html" class="app-list-item-link mdui-text-left">
+								演员表
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+							明星库
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/mingxingku/neidi/index.html" class="app-list-item-link mdui-text-left">
+								内地明星
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/mingxingku/gangtai/index.html" class="app-list-item-link mdui-text-left">
+								港台明星
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/mingxingku/hanguo/index.html" class="app-list-item-link mdui-text-left">
+								韩国明星
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/mingxingku/riben/index.html" class="app-list-item-link mdui-text-left">
+								日本明星
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/mingxingku/meiguo/index.html" class="app-list-item-link mdui-text-left">
+								美国明星
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left" onClick="">
+							娱乐新闻
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</div>
+					<ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yule/news/index.html" class="app-list-item-link mdui-text-left">
+								娱乐新闻
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yule/bagua/index.html" class="app-list-item-link mdui-text-left">
+								明星资讯
+							</a>
+						</li>
+						<li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+							<a href="http://gengju.com.cn/yule/weidianyingzixun/index.html" class="app-list-item-link mdui-text-left">
+								微电影资讯
+							</a>
+						</li>
+					</ul>
+				</li>
+			            <li class="mdui-collapse-item app-hide-list  app-collapse-list">
+				   <a href="http://gengju.com.cn/2019dy/index.html" class=" mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left">
+							2019电影 
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</a>
+				</li><li class="mdui-collapse-item app-hide-list  app-collapse-list">
+				   <a href="http://gengju.com.cn/2019dsj/index.html" class=" mdui-list-item mdui-ripple  mdui-p-x-0">
+						<div class="menu-click mdui-list-item-content mdui-text-left">
+							2019电视剧 
+							<i class="mdui-collapse-item-arrow mdui-icon material-icons mdui-float-right">
+								&#xe5cc;
+							</i>
+						</div>
+					</a>
+				</li>  
+			</ul>
+		</div>
+	
+</div>
+
+
+
+
+</header>
+
+  <!--.slide-->
+  <section class="slide-main bg-white b-b-solid mb-20">
+    <div id="focus" class="focus">
+      <div class="hd">
+        <ul class="hd-list">
+        </ul>
+      </div>
+      <div class="bd index-slide-height">
+        <ul>{dede:arclist titlelen='45' row='5' typeid='all' flag='f'}
+  <li> <a href="view.php?aid=[field:id/]"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title /]">
+    <p class="bd-txt"> <span class="slide-title db">[field:title /]</span> <span class="slide-intro db">[field:description function='cn_substr(@me,90)'/]...</span> </p>
+    </a> </li>
+  {/dede:arclist}
+        </ul>
+      </div>
+    </div>
+    <div class="slide-main-an">
+      <div class="list-artical"> {dede:arclist titlelen='45' row='3' typeid='all' flag='h'}
+  <a href="view.php?aid=[field:id/]" class="la-two ptb-30 b-b-dash">
+    <div class="la-two-main">
+      <div class="la-two-right">
+        <h3 class="la-two-title">[field:title /]</h3>
+        <div class="la-two-info"> <span class="la-two-info-time">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </div>
+      </div>
+      <div class="la-two-left">
+        <div class="la-two-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img"/> </div>
+      </div>
+    </div>
+    </a> 
+  {/dede:arclist}
+	  </div>
+    </div>
+  </section>
+  <!--/.slide--> 
+  <!--.今日精选-->
+  <section class="rec plr-30 bg-white b-b-solid mb-20">
+    <h2 class="cm-title clearfix"> <i class="icon icon-title-todayrem fl"></i> <span class="fl">今日精选</span> </h2>
+    <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='all' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='5' typeid='all' flag='c'}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+    </div>
+  </section>
+  <!--/.今日精选--> 
+  <!--.导航轮播-->
+  <section class="wrap-box mtop plr-30 bg-white clr mb-20 pb-40 b-b-solid">
+    <div id="leftTabBox" class="tabBox">
+     <!-- <ul class="mod-item-tags item-tags-u hd">
+        <li>新闻</li>
+        <li>女人</li>
+        <li>育儿</li>
+        <li>减肥</li>
+        <li>美容</li>
+      </ul>--><!--电视剧剧情-->
+      <div class="col-item-main bd">
+	  <h3>电视剧介绍</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='1' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='1' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='1'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+<!--电影剧情-->
+      <div class="col-item-main bd">
+	  <h3>电影剧情</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='2' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='2' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='2'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+<!--分集剧情-->
+      <div class="col-item-main bd">
+	  <h3>分集剧情</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='6' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='6' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='6'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+
+<!--微电影-->
+      <div class="col-item-main bd">
+	  <h3>微电影</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='4' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='4' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='4'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+
+<!--综艺-->
+      <div class="col-item-main bd">
+	  <h3>综艺</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='5' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='5' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='5'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+      <!--演员表 代图片的列表-->
+ <h3>演员表</h3><hr>
+        <div class="item-main-con btn-mtop">
+ {dede:arclist titlelen='60' row='6' typeid='51'}
+<div class="list-artical"> 
+  <a href="view.php?aid=[field:id/]" class="la-two ptb-30 b-b-dash">
+  <div class="la-two-main">
+    <div class="la-two-right">
+      <h3 class="la-two-title">[field:title /]</h3>
+      <div class="la-two-info"> <span class="la-two-info-time">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </div>
+    </div>
+    <div class="la-two-left">
+      <div class="la-two-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img"/> </div>
+    </div>
+  </div>
+  </a> 
+</div>
+ {/dede:arclist}
+			{dede:type typeid='51'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+		</div>
+      <br>
+<!--影视百科-->
+      <div class="col-item-main bd">
+	  <h3>影视百科</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='7' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='7' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='7'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div>
+      <br>
+<!--娱乐新闻-->
+      <div class="col-item-main bd">
+	  <h3>娱乐新闻</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='3' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='3' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='3'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+
+<!--2019电影-->
+      <div class="col-item-main bd">
+	  <h3>2019电影</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='52' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='52' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='52'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+<!--2019电视剧-->
+      <div class="col-item-main bd">
+	  <h3>2019电视剧</h3><hr>
+	  
+	  <div class="rec plr-30 bg-white b-b-solid mb-20">
+	   <div class="rec-main">{dede:arclist titlelen='60' row='1' typeid='53' flag='a,p' limit='0,1'}
+	<a href="view.php?aid=[field:id/]" class="rec-main-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img" alt="[field:title /]">
+      <div class="rec-main-title">[field:title /]</div>
+    </a>{/dede:arclist}
+      <div class="rec-ul"> {dede:arclist titlelen='60' row='6' typeid='53' flag=''}
+  <a href="view.php?aid=[field:id/]" class="rec-ls clearfix"> 
+  <span class="rec-ls-txt fl">[field:title /]</span> 
+  </a> 
+  {/dede:arclist}
+	  </div>
+       
+    </div></div>
+    {dede:type typeid='53'}<a href="list.php?tid=[field:id/]" class="btn-more">更多精彩内容<i class="btn-more-arrow"></i></a>{/dede:type} 
+</div><br>
+
+      </div>
+    </div>
+</div>
+  </section>
+  <!--/.导航轮播--> 
+  <!--明星库-->
+  <section class="wonder-pic plr-30 bg-white b-b-solid mb-20">
+    <h2 class="cm-title clearfix"> <i class="icon icon-title-pic fl"></i> <span class="fl">明星库</span> </h2>
+    <div class="wop-main">
+      <ul class="wop-body clearfix">
+ {dede:arclist titlelen='60' row='6' typeid='13'}
+    <li class="wop-list fl"> <a href="view.php?aid=[field:id/]" class="wop-ls"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img">
+      <div class="wop-ls-txt">[field:title /]</div>
+      </a> </li>
+ {/dede:arclist}
+      </ul>
+    </div>
+  </section>
+  <!--/.精彩图片--> 
+  <!--.大家都在看-->
+  <section class="hor plr-30 bg-white">
+    <h2 class="cm-title clearfix"> <i class="icon icon-title-look fl"></i> <span class="fl">大家正在看</span> </h2>
+    <div class="hor-main clearfix"> 
+ {dede:arclist row='8' titlelen='6' orderby='rand'}
+	<a href="view.php?aid=[field:id/]" class="hor-ls  fl">[field:title /]</a>
+ {/dede:arclist}
+	</div>
+  </section>
+  <!--/.大家都在看-->
+  {dede:include filename="footer_m.htm"/}
+</section>
+</body>
+</html>

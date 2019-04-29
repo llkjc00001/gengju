@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="applicable-device" content="mobile" />
+<title>{dede:field name="title"/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/m/style/css/style.css">
+<script src="/m/style/js/zepto.min.js"></script>
+<script src="/m/style/js/TouchSlide.1.1.js"></script>
+<script src="/m/style/js/layout.js"></script>
+<style>
+.ml-2 {
+	margin-left: -0.3rem;
+}
+.mt-20 {
+	margin-top: 0.2rem;
+}
+.ml-20 {
+	margin-left: 0.2rem;
+}
+.ml-14 {
+	margin-left: -14px;
+}
+.col-details-tip .details-tips-prev {
+margin-top: .1rem;
+line-height: .5rem;
+}
+.paging--detail {
+margin: .3rem 0
+}
+</style>
+</head>
+
+<body>
+<section class="view"> 
+<header class="header clr">
+  <div class="header-home"> <a href="/m" class="logo"> <img src="/m/style/images/logo.png" alt="" class="all-img"> </a> </div>
+  <nav class="header-nav">
+    <div class="header-nav-item">{dede:type}<a href="list.php?tid=[field:id/]" class="header-nav-link">[field:typename/]</a>{/dede:type}</div>
+  </nav>
+</header>
+  <!--.详情内容-->
+  <section class="col-detail-con b-b-dashed mb-20">
+    <div class="detail-box">
+      <article class="detail-title">
+        <h2>{dede:field.title/}</h2>
+        <p class="detail-tips"> <span>发布时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</span> </p>
+      </article>
+      <!--.M-001-->
+      <div class="mod-detail-infro" id="contentText">
+{dede:field.body/}      </div>
+      <!--.M-002-->
+      <div class="paging paging--detail">{dede:pagebreak/}</div>
+      <div class="col-details-tip">
+        <p class="details-tips-prev details-tips-dif"> <i class="ico-next"></i> {dede:prenext get='pre'/}										
+										
+              	
+        </p>
+        <p class="details-tips-prev details-tips-dif"> <i class="ico-next"></i> {dede:prenext get='next'/}										
+        	
+        </p>
+      </div>
+    </div>
+  </section>
+  <!--/.详情内容--> 
+  <!--.精彩图片-->
+  <section class="wonder-pic plr-30 bg-white b-b-solid mb-20">
+    <h2 class="cm-title clearfix"> <span class="fl">明星库</span> </h2>
+    <div class="wop-main">
+      <ul class="wop-body clearfix">
+ {dede:arclist titlelen='60' row='4' typeid='13'}
+    <li class="wop-list fl"> <a href="view.php?aid=[field:id/]" class="wop-ls"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img">
+      <div class="wop-ls-txt">[field:title/]</div>
+      </a> </li>
+ {/dede:arclist}
+      </ul>
+    </div>
+  </section>
+  <!--/.精彩图片--> 
+  <!--.猜你喜欢-->
+  <section class="mod-wrap line-border-top mb-20">
+    <h2>
+      <p class="related-title">猜你喜欢</p>
+    </h2>
+    <ul class="u-like-items">{dede:arclist titlelen='60' row='6' orderby='hot'}
+  <li> <a href="view.php?aid=[field:id/]" class="u-like-link">
+    <!--<p class="u-like-pic"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title/]"> </p>-->
+    <p class="u-like-text">[field:title/]</p>
+    </a> </li>
+  {/dede:arclist}
+    </ul>
+  </section>
+  <!--/.猜你喜欢--> 
+  <!--.热门精选-->
+  <section class="wre plr-30 bg-white mb-20 b-b-dashed">
+    <h2 class="d-title">热门精选</h2>
+    <div class="list-artical"> {dede:arclist titlelen='60' row='6' flag='c,p'}
+      <a href="view.php?aid=[field:id/]" class="la-two ptb-30 b-b-dash">
+      <div class="la-two-main">
+        <div class="la-two-right">
+          <h3 class="la-two-title">[field:title/]</h3>
+          <div class="la-two-info"> <span class="la-two-info-time">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </div>
+        </div>
+        <div class="la-two-left">
+          <div class="la-two-imgwrap"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img"/> </div>
+        </div>
+      </div>
+      </a> 
+      {/dede:arclist}
+	  </div>
+  </section>
+  <!--/.热门精选--> 
+  <!--.大家都在看-->
+  <section class="hor plr-30 bg-white">
+    <h2 class="cm-title clearfix"> <i class="icon icon-title-look fl"></i> <span class="fl">大家正在看</span> </h2>
+    <div class="hor-main clearfix">  
+	{dede:arclist row='8' titlelen='4' orderby='rand'}
+	<a href="view.php?aid=[field:id/]" class="hor-ls  fl">[field:title /]</a>
+ {/dede:arclist}
+	</div>
+  </section>
+  <!--/.大家都在看--> 
+  {dede:include filename="footer_m.htm"/}
+</section>
+</body>
+</html>

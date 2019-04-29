@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<link rel="alternate" media="only screen and(max-width: 640px)"/>
+<meta name="applicable-device" content="pc">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<script src="/style/js/jquery.min.js"></script>
+<!--<script charset="utf-8" src="https://ers.baidu.com/app/s.js?siteId=7863239&amp;goTop=1"></script>-->
+<link rel="stylesheet" href="/style/css/style.css">
+<link rel="stylesheet" href="/style/css/feed.css">
+<meta http-equiv="mobile-agent" content="format=xhtml;url={dede:global.cfg_mobileurl/}/view.php?aid={dede:field.id/}">
+<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="{dede:global.cfg_mobileurl/}/view.php?aid={dede:field.id/}";}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+<style>
+.main-relative {
+	position: relative;
+}
+.ad-sty {
+	width: 300px;
+}
+body .nav-fixed {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+}
+body .nav-absolute {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+}
+</style>
+<style>
+.nav-link {
+	padding: 0 17px;
+}
+.img-h-100 {
+	height: 100%;
+	width: auto;
+	max-width: initial;
+}
+.about-nav-ls-cur a, .about-nav-ls:hover a {
+	color: #fff;
+}
+.right_fbox {
+	width: 143px;
+	height: 349px;
+	position: fixed;
+	float: right;
+	left: 50%;
+	top: 59%;
+	z-index: 999;
+	margin-left: 530px;
+}
+.ad-box {
+	margin-top: 10px;
+}
+.ad-box .detail-head {
+	margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body class="footer-special">
+<!--.头部-->
+{dede:include filename="head.htm"/}
+<!--/.nav-->
+<div class="wrap-b pt-20 pb-40"> 
+  <!--.面包屑-->
+  <div class="wrap bread">
+    <div class="bread-main clearfix">{dede:field name='position'/}内容</div>
+  </div>
+  <!--/.面包屑-->
+  <div class="wrap clearfix main main-relative">
+    <div class="left fl"> 
+      
+      <!--.文章-->
+      <div class="arti">
+        <div class="arti-head">
+          <h1 class="arti-title">{dede:field.title/}</h1>
+          <div class="arti-head-info clearfix"> <span class="fl arti-hi-left">发布时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}&nbsp;&nbsp;&nbsp;来源：{dede:field.source/} &nbsp;&nbsp;&nbsp;</span>
+            <div class="arti-head-sizewrap fr clearfix"> <span class="fl arti-hs-list">小</span> <span class="fl arti-hs-list arti-hs-list-act">中</span> <span class="fl arti-hs-list">大</span> </div>
+            <span class="fr arti-hi-font">字号：</span>
+            <div class="arti-hi-phone fr clearfix">
+              <div class="arti-hip-left fl"> <i class="icon icon-phone"></i>
+                <div class="arti-hipl-show">
+                  <div class="arti-hipl-box clearfix"> <span class="fl arti-hipl-left" id="qrcode"><img src="{dede:global name='cfg_plus_dir'/}/qrcode.php?action=get_qrcode&type={dede:var name='type'/}&id={dede:var name='id'/}" class="all-img"></span>
+                    <div class="fr arti-hipl-right">
+                      <h4 class="arti-hipl-right-tip">用手机扫描二维码
+                        在手机上继续观看</h4>
+                      <h5 class="arti-hipl-right-title"> </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="fl">手机查看</span> </div>
+          </div>
+        </div>
+        <div class="arti-content">
+          {dede:field.body/}
+        </div>
+        <!--.PC-001-->
+        <div class="ad-box">
+          <div class="detail-head  clearfix">
+            <h3 class="detail-head-title fl">图说天下</h3>
+          </div>
+          <script src='/plus/ad_js.php?aid=6' language='javascript'></script>
+        </div>
+        <div class="wrap-list-paging"><p>{dede:pagebreak/}</p></div>
+        <!--.PC-002--> 
+        <script src='/plus/ad_js.php?aid=7' language='javascript'></script> 
+        <div class="casedetail-bottom clr">
+          <div class="casedetail-share flr"> <span class="fl casedetail-share-txt">分享到:</span>
+            <div class="casedetail-share-main fl clearfix"> <span title="分享到QQ空间" data-share="qzone" class="share-com share-qzone fl"></span> <span title="分享到新浪微博" data-share="weibo" class="share-com share-sinaminiblog fl"></span> <span title="分享到微信" class="share-com share-weixin fl"> </span> </div>
+          </div>
+          <div class="arti-wxwrap">
+            <div class="clearfix">
+             <!-- <h3 class="fl arti-wxwrap-title">分享到微信朋友圈</h3>-->
+              <span class="fr arti-wxwrap-close">×</span> </div>
+            <div class="arti-wxwrap-bottom">
+                    {dede:qrcode/}
+            <!--  <p>打开微信，点击底部的“发现”，</p>
+              <p>使用“扫一扫”即可将网页分享至朋友圈。</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="/style/js/share.js"></script> 
+      <script type="text/javascript">
+    $(function(){
+        
+        var size=['14px','16px','18px'];
+        var el=$('.arti-content');
+        var chooseDom=$('.arti-head-sizewrap > span');
+        chooseDom.on('click',function(){
+            var iNow=$(this).index();
+            $(this).addClass('arti-hs-list-act').siblings().removeClass('arti-hs-list-act');
+            el.css('fontSize',size[iNow]);
+        });
+        
+        
+        $('.arti-hipl-right-title').html($('.arti-head > h2').html());
+        
+        
+        $('.share-weixin').on('click',function(){
+                $('.arti-wxwrap').show();
+        });
+        $('.arti-wxwrap-close').on('click',function(){
+                $('.arti-wxwrap').hide();
+        });
+        
+        new Share({
+            dom:['.share-qzone','.share-sinaminiblog','.share-qqmb'],
+            contentDom:'.arti-head > h2'
+        });
+        
+    });
+</script> <!--/.文章--> 
+      
+      <!--.相关案例-->
+      <div class="relcase clearfix">
+        <div class="relcase-title fl">
+          <div class="relcase-title-word">相</div>
+          <div class="relcase-title-word">关</div>
+          <div class="relcase-title-word">阅</div>
+          <div class="relcase-title-word">读</div>
+        </div>
+        <div class="relcase-right fl">
+          <div class="relcase-right-main clearfix">
+            <ul class="relcase-part fl">{dede:likearticle row='4' titlelen='40' limit='0,4'}
+              <li class="relcase-list clr"> <em class="fll relcase-list-style"></em> <a href="[field:arcurl/]" class="fll relcase-list-link">[field:title/]</a> <span class="relcase-list-time fr">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </li>
+              {/dede:likearticle}
+            </ul>
+            <ul class="relcase-part fl">{dede:likearticle row='4' titlelen='40' limit='4,4'}
+              <li class="relcase-list clr"> <em class="fll relcase-list-style"></em> <a href="[field:arcurl/]" class="fll relcase-list-link">[field:title/]</a> <span class="relcase-list-time fr">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </li>
+              {/dede:likearticle}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--/.相关案例--> 
+      
+      <!--.健康热点-->
+      <div class="guslike">
+        <div class="detail-head clearfix mb-20">
+          {dede:type typeid='6'}<div class="detail-head-title guslike-title-ls guslike-title-ls-cur fl">[field:typename/]</div>{/dede:type} 
+          {dede:type typeid='5'}<div class="detail-head-title guslike-title-ls fl">[field:typename/]</div>{/dede:type} 
+          {dede:type typeid='52'}<div class="detail-head-title guslike-title-ls fl">[field:typename/]</div>{/dede:type} 
+          {dede:type typeid='53'}<div class="detail-head-title guslike-title-ls fl">[field:typename/]</div>{/dede:type} 
+        </div>
+        <div class="guslike-body">
+          <ul class="guslike-main guslike-main-cur clr">{dede:arclist titlelen='66' row='8' typeid='6' flag='c,p'}
+            <li class="guslike-list fll"> <a href="[field:arcurl/]" class="guslike-list-imglink"> <img class="all-img-block" src="[field:litpic function='gcGetRandLitpic(@me)'/]"/> </a> <a href="" class="guslike-list-title">[field:title/]</a> </li>
+            {/dede:arclist}
+		  </ul>
+          <ul class="guslike-main  clr">{dede:arclist titlelen='66' row='8' typeid='5' flag='c,p'}
+            <li class="guslike-list fll"> <a href="[field:arcurl/]" class="guslike-list-imglink"> <img class="all-img-block" src="[field:litpic function='gcGetRandLitpic(@me)'/]"/> </a> <a href="" class="guslike-list-title">[field:title/]</a> </li>
+            {/dede:arclist}
+          </ul>
+          <ul class="guslike-main  clr">{dede:arclist titlelen='66' row='8' typeid='52' flag='c,p'}
+            <li class="guslike-list fll"> <a href="[field:arcurl/]" class="guslike-list-imglink"> <img class="all-img-block" src="[field:litpic function='gcGetRandLitpic(@me)'/]"/> </a> <a href="" class="guslike-list-title">[field:title/]</a> </li>
+            {/dede:arclist}
+         </ul>
+          <ul class="guslike-main  clr">{dede:arclist titlelen='66' row='8' typeid='53' flag='c,p'}
+            <li class="guslike-list fll"> <a href="[field:arcurl/]" class="guslike-list-imglink"> <img class="all-img-block" src="[field:litpic function='gcGetRandLitpic(@me)'/]"/> </a> <a href="" class="guslike-list-title">[field:title/]</a> </li>
+            {/dede:arclist}
+         </ul>
+        </div>
+      </div>
+      <script>
+    $(function () {
+        $('.guslike .guslike-title-ls').on('mouseover', function () {
+            $(this).addClass('guslike-title-ls-cur').siblings().removeClass('guslike-title-ls-cur');
+            $('.guslike .guslike-main').eq($(this).index()).addClass('guslike-main-cur').siblings().removeClass('guslike-main-cur');
+        });
+    });
+</script> <!--/.健康热点--> 
+      
+      <!--.推荐阅读-->
+      <div class="related-read mb-10">
+        <div class="detail-head clearfix">
+          <h3 class="detail-head-title fl">推荐阅读</h3>
+        </div>
+        <div class="related-read-main">
+		  <div class="ptb-20 clearfix"><script src='/plus/ad_js.php?aid=8' language='javascript'></script></div>
+		  		{dede:arclist titlelen='66' row='5' typeid='' flag='a,p'}
+          <div class="ls-typetwo ptb-20 clearfix"> <a href="[field:arcurl/]" class="ls-typetwo-imgwrap fl"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title/]" class="all-img-block"> </a>
+            <div class="ls-typetwo-right fl">
+              <h3 class="ls-typetwo-title"> <a href="[field:arcurl/]" class="a-hover">[field:title/]</a> </h3>
+              <div class="ls-typetwo-content">[field:description function='cn_substr(@me,160)'/]...</div>
+              <div class="ls-typetwo-info clearfix"> <span class="ls-typetwo-time fl">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </div>
+            </div>
+          </div>
+          {/dede:arclist}
+ 
+        </div>
+      </div>
+      <!--/.推荐阅读--> 
+      
+    </div>
+    {dede:include filename="right2.htm"/}
+<!--.PC-008--> 
+<!--.尾部--> 
+<div class="wrap-b footer-b">
+  <div class="wrap footer-index">
+    {dede:include filename="footer.htm"/}
+  </div>
+</div> 
+<!--/.尾部--> 
+<script src="/style/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script> 
+<script type="text/javascript">
+		$(function(){
+			
+			jQuery(".slideBox").slide({mainCell:".bd ul",effect:"leftLoop",autoPlay:true});
+			
+			$('.hrt-head .hrt-head-list').on('mouseover',function(){
+				$(this).addClass('hrt-head-list-hover').siblings().removeClass('hrt-head-list-hover');
+				$('.hrt-main .hrt-main-list').eq($(this).index()).addClass('hrt-main-list-show').siblings().removeClass('hrt-main-list-show');
+			});
+			
+			$('.ma-nav .ma-nav-list').on('mouseover',function(){
+				$(this).addClass('ma-nav-list-hover').siblings().removeClass('ma-nav-list-hover');
+				$('.ls-main .ls-mod').eq($(this).index()).addClass('ls-mod-act').siblings().removeClass('ls-mod-act');
+				$('.ls-main-addmore .ls-mod').eq($(this).index()).addClass('ls-mod-act').siblings().removeClass('ls-mod-act');
+			});
+
+            //百度悬停广告
+            var t = $('.ad-sty')[0].offsetTop + $('.main-relative')[0].offsetTop;
+            var H=parseInt($('.main-relative').css('height'));
+            var h=parseInt($('.nav-position').css('height'));
+
+            $(window).on('scroll',function(e){
+                var scroll=$('html').scrollTop()||$('body').scrollTop();
+                H = parseInt($('.main-relative').css('height'));
+                if(((scroll-t) > 0) && ((scroll-t) < (H-h))){
+                    $('.nav-position').addClass('nav-fixed');
+                    $('.nav-position').removeClass('nav-absolute');
+                }else if((scroll-t) > (H-h)){
+                    $('.nav-position').removeClass('nav-fixed');
+                    $('.nav-position').addClass('nav-absolute');
+                }else{
+                    $('.nav-position').removeClass('nav-fixed');
+                    $('.nav-position').removeClass('nav-absolute');
+                }
+            })
+		});
+
+            
+    </script> 
+<script>
+    /*延迟加载图片
+     $(function(){
+     $("body img").lazyload({
+     threshold : 20
+     });
+     });*/
+    $(function(){
+        function loadImg(){
+            var cT=document.documentElement.clientHeight;
+            var sT=$('html').scrollTop() || $('body').scrollTop();
+            $('img').each(function(index,el) {
+                /*console.log($(this).offset().top); */
+                if(!$(this).attr('data-src')){
+                    var curT=$(this).offset().top;
+                    if(curT < cT + sT){
+                        $(this).attr('src',$(this).attr('data-src'))
+                    }
+                }
+            });
+        }
+        loadImg();
+        window.onscroll=function(){
+            loadImg();
+        };
+    });
+</script>
+</body>
+</html>

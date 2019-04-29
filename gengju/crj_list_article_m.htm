@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="applicable-device" content="mobile" />
+<title>{dede:field.seotitle/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="/m/style/css/style.css">
+<script src="/m/style/js/zepto.min.js"></script>
+<script src="/m/style/js/TouchSlide.1.1.js"></script>
+<script src="/m/style/js/layout.js"></script>
+<style>
+.ml-2 {
+	margin-left: -0.3rem;
+}
+.mt-20 {
+	margin-top: 0.2rem;
+}
+.ml-20 {
+	margin-left: 0.2rem;
+}
+.ml-14 {
+	margin-left: -14px;
+}
+.col-details-tip .details-tips-prev {
+margin-top: .1rem;
+line-height: .5rem;
+}
+.paging--detail {
+margin: .3rem 0
+}
+</style>
+</head>
+<body>
+<section class="view"> 
+  <!--头部-->
+  <header class="header clr">
+    <div class="header-home"> <a href="/m" class="logo"> <img src="/m/style/images/logo.png" alt="" class="all-img"> </a> </div>
+    <nav class="header-nav">
+      <div class="header-nav-item">{dede:type}<a href="list.php?tid=[field:id/]" class="header-nav-link">[field:typename/]</a>{/dede:type}</div>
+    </nav>
+  </header>
+  <!--.nav-list--->
+  <nav class="nav-list">
+    <ul class="nav-list-box">
+      <li> {dede:type2}<a href="[field:typelink/]" class="nav-ul-link">全部</a>{/dede:type2} </li>
+	  
+				{dede:channel type='son' row='13'}											
+	<li><a href="list.php?tid=[field:id/]" class="nav-ul-link">[field:typename/]</a></li>												{/dede:channel}
+    </ul>
+  </nav>
+  <script>
+	$(function(){
+		var w=$('.nav-list-box').width();
+		var allW=0;
+		var cur=0;
+		var leftArr=[0];
+		var l=$('.nav-list-box > li').length;
+		$('.nav-list-box > li').each(function(i,el){
+			allW+=parseInt($(el).width());
+			allW+=parseInt($(el).css('margin-right'));
+			leftArr.push(allW);
+			if($(el).children().hasClass('nav--active')){
+				cur=i;
+			}
+		});
+		
+		if(leftArr[cur] > w/2){
+			$('.nav-list-box').scrollLeft(leftArr[cur]-w/2);
+		}
+		
+	});
+</script> 
+<!--/.nav-list--> 
+  <!--.列表-->
+  <section class="plr-30">
+    <div class="list-artical"> 
+{dede:list pagesize='20'}
+<a href="view.php?aid=[field:id/]" class="la-two ptb-30 b-b-dash">
+      <div class="la-two-main">
+        <div class="la-two-right">
+          <h3 class="la-two-title">[field:title /]</h3>
+          <div class="la-two-info"> <span class="la-two-info-time">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </div>
+        </div>
+        <div class="la-two-left">
+          <div class="la-two-imgwrap"><img src="[field:litpic function='gcGetRandLitpic(@me)'/]" class="all-img"/> </div>
+        </div>
+      </div>
+      </a>
+{/dede:list}
+
+    </div>
+  </section>
+  <!--/.列表--> 
+  <!--.分页-->
+  <section class="paging page-space">{dede:pagelist listitem="index,end,pre,next" listsize="3"/}</section>
+  <!--/.分页-->
+  {dede:include filename="footer_m.htm"/}
+</section>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>关于我们 - 更剧剧情网</title>
+<meta name="keywords" content="关于我们-更剧剧情网">
+<meta name="description" content="关于我们-更剧剧情网">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<link rel="alternate" media="only screen and(max-width: 640px)" />
+<meta name="applicable-device" content="pc">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<script src="/style/js/jquery.min.js"></script>
+<link rel="stylesheet" href="/style/css/style.css">
+<style>
+.nav-link {
+	padding: 0 17px;
+}
+.img-h-100 {
+	height: 100%;
+	width: auto;
+	max-width: initial;
+}
+.about-nav-ls-cur a, .about-nav-ls:hover a {
+	color: #fff;
+}
+.right_fbox {
+	width: 143px;
+	height: 349px;
+	position: fixed;
+	float: right;
+	left: 50%;
+	top: 59%;
+	z-index: 999;
+	margin-left: 530px;
+}
+.ad-box {
+	margin-top: 10px;
+}
+.ad-box .detail-head {
+	margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body class="footer-special">
+<!--.头部-->
+{dede:include filename="head.htm"/}
+<!--/.nav-->
+<div class="wrap-b about-b">
+  <div class="wrap about clearfix">
+    <ul class="about-nav fl">
+	{dede:channel type='son' noself='yes'}
+	<li class="about-nav-ls [field:global name=autoindex runphp="yes"](@me==0)? @me="about-nav-ls-cur":@me="";[/field:global]"><a href="[field:typelink/]" >[field:typename/]</a></li>{/dede:channel}
+     <!-- <li class="about-nav-ls about-nav-ls-cur"><a href="/about/index.html" >关于我们</a></li>
+      <li class="about-nav-ls"><a href="/about/adservice.html" >广告服务</a></li>
+      <li class="about-nav-ls"><a href="/about/contact.html" >联系我们</a></li>
+      <li class="about-nav-ls"><a href="/about/disclaimer.html" >版权声明</a></li>
+      <li class="about-nav-ls"><a href="/about/sitemap.html" >网站地图</a></li>-->
+    </ul>
+    <div class="about-main fl">
+      <div class="about-main-ls  about-main-ls-cur"> 
+        
+        <!--.{dede:field.seotitle /}-->
+        <div class="aboutus">
+          <h2 class="about-head">
+            <div class="about-head-word">{dede:field.seotitle /}</div>
+          </h2>
+          <div class="aboutus-main">
+            {dede:field.content/}
+          </div>
+        </div>
+
+        <!--/.{dede:field.seotitle /}--> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--.尾部-->
+<div class="wrap-b footer-b">
+  <div class="wrap footer-index">
+    {dede:include filename="footer.htm"/}
+  </div>
+</div> 
+<!--/.尾部--> 
+
+<script src="/style/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script> 
+<script type="text/javascript">
+		$(function(){
+			
+			jQuery(".slideBox").slide({mainCell:".bd ul",effect:"leftLoop",autoPlay:true});
+			
+			$('.hrt-head .hrt-head-list').on('mouseover',function(){
+				$(this).addClass('hrt-head-list-hover').siblings().removeClass('hrt-head-list-hover');
+				$('.hrt-main .hrt-main-list').eq($(this).index()).addClass('hrt-main-list-show').siblings().removeClass('hrt-main-list-show');
+			});
+			
+			$('.ma-nav .ma-nav-list').on('mouseover',function(){
+				$(this).addClass('ma-nav-list-hover').siblings().removeClass('ma-nav-list-hover');
+				$('.ls-main .ls-mod').eq($(this).index()).addClass('ls-mod-act').siblings().removeClass('ls-mod-act');
+				$('.ls-main-addmore .ls-mod').eq($(this).index()).addClass('ls-mod-act').siblings().removeClass('ls-mod-act');
+			});
+		});
+	</script> 
+<script>
+    $(function(){
+        function loadImg(){
+            var cT=document.documentElement.clientHeight;
+            var sT=$('html').scrollTop() || $('body').scrollTop();
+            $('img').each(function(index,el) {
+                /*console.log($(this).offset().top); */
+                if(!$(this).attr('data-src')){
+                    var curT=$(this).offset().top;
+                    if(curT < cT + sT){
+                        $(this).attr('src',$(this).attr('data-src'))
+                    }
+                }
+            });
+        }
+        loadImg();
+        window.onscroll=function(){
+            loadImg();
+        };
+    });
+</script> 
+</body>
+</html>

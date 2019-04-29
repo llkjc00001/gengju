@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>搜索页_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<link rel="alternate" media="only screen and(max-width: 640px)" />
+<meta name="applicable-device" content="pc">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<script src="/style/js/jquery.min.js"></script>
+<!--<script charset="utf-8" src="https://ers.baidu.com/app/s.js?siteId=7863239&amp;goTop=1"></script>-->
+<link rel="stylesheet" href="/style/css/style.css">
+<style>
+.nav-link {
+	padding: 0 17px;
+}
+.img-h-100 {
+	height: 100%;
+	width: auto;
+	max-width: initial;
+}
+.about-nav-ls-cur a, .about-nav-ls:hover a {
+	color: #fff;
+}
+.right_fbox {
+	width: 143px;
+	height: 349px;
+	position: fixed;
+	float: right;
+	left: 50%;
+	top: 59%;
+	z-index: 999;
+	margin-left: 530px;
+}
+.ad-box {
+	margin-top: 10px;
+}
+.ad-box .detail-head {
+	margin-bottom: 10px;
+}
+</style>
+</head>
+<body class="footer-special">
+<!--.头部-->
+{dede:include filename="head.htm"/}
+<!--/.nav-->
+<div class="wrap-b pt-20 pb-40"> 
+  <!--.面包屑-->
+  <div class="wrap bread">
+    <div class="bread-main clearfix">搜索 <strong class="fc_03c">{dede:global name='keyword' function='RemoveXSS(@me)'/}</strong> 的结果 </div>
+  </div>
+  <!--/.面包屑-->
+  <div class="wrap clearfix main">
+    <div class="left fl"> 
+      <!--.二级列表-->
+      <div class="two-list">
+        <div class="two-list-main">
+       {dede:list pagesize='20'}
+          <div class="ls-typetwo  b-b-dashed clearfix pb-20"> <a href="[field:arcurl/]" class="ls-typetwo-imgwrap fl"> <img src="[field:litpic function='gcGetRandLitpic(@me)'/]" alt="[field:title/]" class="all-img-block"> </a>
+            <div class="ls-typetwo-right fl">
+              <h3 class="ls-typetwo-title"> <a href="[field:arcurl/]" class="a-hover">[field:title/]</a> </h3>
+              <div class="ls-typetwo-content">[field:description function='cn_substr(@me,160)'/]...</div>
+              <div class="ls-typetwo-info clearfix"> <span class="ls-typetwo-time fl">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </div>
+            </div>
+          </div>
+{/dede:list}
+        </div>
+      </div>
+      <!--/.二级列表--> 
+      <!--.翻页-->
+      <div class="wrap-list-paging mt-20"><p>{dede:pagelist listitem="index,end,pre,next,pageno" listsize="2"/}</p></div>
+      <!--/.翻页--> 
+    </div>
+    {dede:include filename="right2.htm"/}
+
+<!--.尾部-->
+<div class="wrap-b footer-b">
+  <div class="wrap footer-index">
+    {dede:include filename="footer.htm"/}
+  </div>
+</div> 
+<!--/.尾部--> 
+
+<script src="/style/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script> 
+<script type="text/javascript">
+		$(function(){
+			
+			jQuery(".slideBox").slide({mainCell:".bd ul",effect:"leftLoop",autoPlay:true});
+			
+			$('.hrt-head .hrt-head-list').on('mouseover',function(){
+				$(this).addClass('hrt-head-list-hover').siblings().removeClass('hrt-head-list-hover');
+				$('.hrt-main .hrt-main-list').eq($(this).index()).addClass('hrt-main-list-show').siblings().removeClass('hrt-main-list-show');
+			});
+			
+			$('.ma-nav .ma-nav-list').on('mouseover',function(){
+				$(this).addClass('ma-nav-list-hover').siblings().removeClass('ma-nav-list-hover');
+				$('.ls-main .ls-mod').eq($(this).index()).addClass('ls-mod-act').siblings().removeClass('ls-mod-act');
+				$('.ls-main-addmore .ls-mod').eq($(this).index()).addClass('ls-mod-act').siblings().removeClass('ls-mod-act');
+			});
+		});
+	</script> 
+<script>
+    /*延迟加载图片
+     $(function(){
+     $("body img").lazyload({
+     threshold : 20
+     });
+     });*/
+    $(function(){
+        function loadImg(){
+            var cT=document.documentElement.clientHeight;
+            var sT=$('html').scrollTop() || $('body').scrollTop();
+            $('img').each(function(index,el) {
+                /*console.log($(this).offset().top); */
+                if(!$(this).attr('data-src')){
+                    var curT=$(this).offset().top;
+                    if(curT < cT + sT){
+                        $(this).attr('src',$(this).attr('data-src'))
+                    }
+                }
+            });
+        }
+        loadImg();
+        window.onscroll=function(){
+            loadImg();
+        };
+    });
+</script> 
+</body>
+</html>

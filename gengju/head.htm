@@ -1,0 +1,61 @@
+<div class="wrap-b header-b">
+  <div class="wrap header clearfix"> 
+    <!-- 头部左侧 -->
+    <div class="header-left fl clearfix">
+      <div class="header-left-ls fl">
+        <div class="header-left-list">  <span class="fl">更剧剧情网-最新电视剧分集剧情介绍,电视剧剧情介绍,电影剧情介绍</span> </div>
+      </div>
+      <!--<div class="header-left-ls fl">
+        <div class="header-left-list"> <a href="/tupian/" class="clearfix a-hover"> <span class="fl">更剧剧情网</span> </a> </div>
+      </div>-->
+      <div class="header-left-ls header-left-ls-wap fl">
+        <div class="header-left-list">
+          <div class="clearfix "> <span class="header-left-ls-wap-title">手机版</span> <i class="icon icon-header-arrow"></i> </div>
+          <div class="header-left-ls-wap-show">
+            <p class="pic-code-app"><img src="/style/images/1556236365.png" class="a-img" alt="更剧剧情网"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 头部右侧 -->
+    <div class="rightnav fr clearfix" > 
+      <a href="/about/sitemap.html" class="rightnav-link fl" target="_blank">网站地图</a>  <a href="http://gengju.com.cn/sitemap.xml" class="rightnav-link fl" target="_blank">sitemap.xml</a> </div>
+  </div>
+</div>
+
+<!--/.头部--> 
+<!--nav-->
+<div class="wrap-b">
+  <div class="wrap nav-header clr">
+    <div class="logo fll"> <a href="/"><img src="/style/images/logo.png" class="a-img" alt="更剧剧情网"></a> </div>
+    <div class="search flr">
+      <div class="search-tags fll"> <span class="search-tags-title">热门搜索：</span> 
+      {dede:hotwords num='3'/} 
+      </div>
+<form class="search-input flr clearfix" name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+    <input type="text" class="inp fl" placeholder="输入关键字" name="q" >
+    <button class="search-btn fl clearfix" type="submit"> <i class="icon icon-search-btn"></i> </button>
+    <input type="hidden" name="show" value="title">
+    <input type="hidden" name="tempid" value="1" >
+    <input type="hidden" name="tbname" value="news">
+</form>
+    </div>
+  </div>
+  <div class="nav-box">
+    <div class="wrap">
+      <ul class="nav clr">
+        <li> <a href="/" class="nav-link">首页</a> </li>
+		{dede:channelartlist typeid='top'}
+        <li> <a href="{dede:field name='typeurl'/}" class="nav-link">{dede:field name='typename'/}</a>
+          <div class="nav-hide"> 
+				{dede:channel type='son' noself='yes'}												
+	<a href="[field:typelink/]" class="nav-hide-item a-hover">[field:typename/]</a>															
+			{/dede:channel}															
+          </div>
+        </li>
+        {/dede:channelartlist}
+      </ul>
+    </div>
+  </div>
+</div>
+<!--/.nav-->
